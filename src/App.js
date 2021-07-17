@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Layout,
   Typography,
@@ -17,6 +18,7 @@ import {
 import Header from './components/Header';
 import 'antd/dist/antd.less';
 import data from './assets/data.json';
+import './styles/Division.less';
 
 const columns = [
   {
@@ -37,14 +39,18 @@ const columns = [
     dataIndex: 'division-sup',
     key: 'division-sup',
     filters: [
-      { text: 'London', value: 'London' },
-      { text: 'New York', value: 'New York' },
+      { text: 'Dirección general', value: 'Dirección general' },
+      { text: 'Producto', value: 'Producto' },
+      { text: 'Operaciones', value: 'Operaciones' },
     ],
+    onFilter: (value, record) => record['division-sup'].indexOf(value) === 0,
+    sorter: (a, b) => a['division-sup'].length - b['division-sup'].length,
   },
   {
     title: 'Colaboradores',
     dataIndex: 'colaboradores',
     key: 'colaboradores',
+    sorter: (a, b) => a.colaboradores - b.colaboradores,
   },
   {
     title: 'Nivel',
@@ -64,10 +70,7 @@ const columns = [
     title: 'Subdivisiones',
     dataIndex: 'subdivisiones',
     key: 'subdivisiones',
-    filters: [
-      { text: 'London', value: 'London' },
-      { text: 'New York', value: 'New York' },
-    ],
+    sorter: (a, b) => a.subdivisiones - b.subdivisiones,
   },
   {
     title: 'Embajadores',
@@ -76,9 +79,12 @@ const columns = [
   },
 ];
 
-const rowSelection = {};
-
 function App() {
+  const [state, setState] = useState({
+    selectedTab: '1',
+    rowSelection: {},
+  });
+
   return (
     <Layout>
       <Header />
@@ -89,22 +95,37 @@ function App() {
           <Button type="primary" icon={<UploadOutlined />} size={'large'} />
           <Button type="primary" icon={<DownloadOutlined />} size={'large'} />
         </div>
-        <Tabs defaultActiveKey="1">
+        <Tabs
+          defaultActiveKey="1"
+          activeKey={state.selectedTab}
+          onChange={(activeKey) =>
+            setState({ ...state, selectedTab: activeKey })
+          }
+        >
           <Tabs.TabPane tab="Divisiones" key="1">
             <section>
-              <Space>
+              <Space className="divisiones__filtros">
                 <Radio.Group value={'listado'}>
                   <Radio.Button value="listado">Listado</Radio.Button>
                   <Radio.Button value="arbol">Árbol</Radio.Button>
                 </Radio.Group>
-                <Select
-                  placeholder="Columnas"
-                  optionFilterProp="children"
-                ></Select>
-                <Input.Search placeholder="Buscar" style={{ width: 200 }} />
+                <Space>
+                  <Select
+                    placeholder="Columnas"
+                    optionFilterProp="children"
+                    style={{ width: 153 }}
+                  >
+                    {columns.map((column, key) => (
+                      <Select.Option value={column.key} key={key}>
+                        {column.title}
+                      </Select.Option>
+                    ))}
+                  </Select>
+                  <Input.Search placeholder="Buscar" style={{ width: 200 }} />
+                </Space>
               </Space>
               <Table
-                rowSelection={rowSelection}
+                rowSelection={state.rowSelection}
                 columns={columns}
                 dataSource={data}
                 pagination={{ current: 1, pageSize: 12 }}
