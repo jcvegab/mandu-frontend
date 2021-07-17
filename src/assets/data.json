@@ -55,56 +55,56 @@
   },
   {
     "key": "7",
-    "division": "CEO",
+    "division": "Strategy",
     "division-sup": "Dirección general",
-    "colaboradores": 1,
-    "nivel": 1,
+    "colaboradores": 3,
+    "nivel": 4,
     "subdivisiones": 1,
-    "embajadores": "Jordyn Herwitz"
+    "embajadores": "Kierra Rosser"
   },
   {
     "key": "8",
     "division": "CEO",
-    "division-sup": "Dirección general",
-    "colaboradores": 1,
-    "nivel": 1,
-    "subdivisiones": 1,
-    "embajadores": "Jordyn Herwitz"
+    "division-sup": "Operaciones",
+    "colaboradores": 5,
+    "nivel": 4,
+    "subdivisiones": 4,
+    "embajadores": null
   },
   {
     "key": "9",
-    "division": "CEO",
+    "division": "Growth",
     "division-sup": "Dirección general",
-    "colaboradores": 1,
-    "nivel": 1,
+    "colaboradores": 3,
+    "nivel": 2,
     "subdivisiones": 1,
-    "embajadores": "Jordyn Herwitz"
+    "embajadores": null
   },
   {
     "key": "10",
-    "division": "CEO",
-    "division-sup": "Dirección general",
-    "colaboradores": 1,
+    "division": "Strategy",
+    "division-sup": "Producto",
+    "colaboradores": 6,
     "nivel": 1,
-    "subdivisiones": 1,
-    "embajadores": "Jordyn Herwitz"
+    "subdivisiones": 4,
+    "embajadores": null
   },
   {
     "key": "11",
-    "division": "CEO",
+    "division": "Growth",
     "division-sup": "Dirección general",
-    "colaboradores": 1,
-    "nivel": 1,
-    "subdivisiones": 1,
-    "embajadores": "Jordyn Herwitz"
+    "colaboradores": 7,
+    "nivel": 2,
+    "subdivisiones": 2,
+    "embajadores": null
   },
   {
     "key": "12",
-    "division": "CEO",
-    "division-sup": "Dirección general",
-    "colaboradores": 1,
-    "nivel": 1,
-    "subdivisiones": 1,
-    "embajadores": "Jordyn Herwitz"
+    "division": "Strategy",
+    "division-sup": "Operaciones",
+    "colaboradores": 8,
+    "nivel": 5,
+    "subdivisiones": 4,
+    "embajadores": null
   }
 ]
