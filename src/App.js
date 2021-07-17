@@ -81,6 +81,7 @@ const columns = [
 
 function App() {
   const [state, setState] = useState({
+    currentPage: 'organización',
     selectedTab: '1',
     rowSelection: {},
   });
