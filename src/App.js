@@ -1,4 +1,5 @@
-// import { Tabs, Button, Pagination, Radio, Input, Select, Table } from 'antd';
+import { Layout } from 'antd';
+// import { Layout, Tabs, Button, Pagination, Radio, Input, Select, Table } from 'antd';
 // import {
 //   PlusOutlined,
 //   DownloadOutlined,
@@ -101,7 +102,7 @@ import 'antd/dist/antd.less';
 
 function App() {
   return (
-    <main className="App">
+    <Layout>
       <Header />
       {/* <div>
         <Button type="primary" icon={<PlusOutlined />} size={'large'} />
@@ -130,7 +131,7 @@ function App() {
           <p>Otro Panel</p>
         </Tabs.TabPane>
       </Tabs> */}
-    </main>
+    </Layout>
   );
 }
 
