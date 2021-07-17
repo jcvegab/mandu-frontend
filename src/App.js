@@ -17,7 +17,6 @@ import {
 } from '@ant-design/icons';
 import Header from './components/Header';
 import 'antd/dist/antd.less';
-import data from './assets/data.json';
 import './styles/Division.less';
 
 const columns = [
