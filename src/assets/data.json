@@ -1,0 +1,110 @@
+[
+  {
+    "key": "1",
+    "division": "CEO",
+    "division-sup": "Dirección general",
+    "colaboradores": 1,
+    "nivel": 1,
+    "subdivisiones": 1,
+    "embajadores": "Jordyn Herwitz"
+  },
+  {
+    "key": "2",
+    "division": "Mandu-Corp",
+    "division-sup": "Dirección general",
+    "colaboradores": 11,
+    "nivel": 2,
+    "subdivisiones": 4,
+    "embajadores": "Carla Siphron"
+  },
+  {
+    "key": "3",
+    "division": "Growth",
+    "division-sup": "Producto",
+    "colaboradores": 4,
+    "nivel": 2,
+    "subdivisiones": 3,
+    "embajadores": null
+  },
+  {
+    "key": "4",
+    "division": "Strategy",
+    "division-sup": "Dirección general",
+    "colaboradores": 6,
+    "nivel": 3,
+    "subdivisiones": 4,
+    "embajadores": null
+  },
+  {
+    "key": "5",
+    "division": "CEO",
+    "division-sup": "Operaciones",
+    "colaboradores": 11,
+    "nivel": 3,
+    "subdivisiones": 5,
+    "embajadores": "Terry Press"
+  },
+  {
+    "key": "6",
+    "division": "Strategy",
+    "division-sup": "Producto",
+    "colaboradores": 7,
+    "nivel": 4,
+    "subdivisiones": 4,
+    "embajadores": null
+  },
+  {
+    "key": "7",
+    "division": "CEO",
+    "division-sup": "Dirección general",
+    "colaboradores": 1,
+    "nivel": 1,
+    "subdivisiones": 1,
+    "embajadores": "Jordyn Herwitz"
+  },
+  {
+    "key": "8",
+    "division": "CEO",
+    "division-sup": "Dirección general",
+    "colaboradores": 1,
+    "nivel": 1,
+    "subdivisiones": 1,
+    "embajadores": "Jordyn Herwitz"
+  },
+  {
+    "key": "9",
+    "division": "CEO",
+    "division-sup": "Dirección general",
+    "colaboradores": 1,
+    "nivel": 1,
+    "subdivisiones": 1,
+    "embajadores": "Jordyn Herwitz"
+  },
+  {
+    "key": "10",
+    "division": "CEO",
+    "division-sup": "Dirección general",
+    "colaboradores": 1,
+    "nivel": 1,
+    "subdivisiones": 1,
+    "embajadores": "Jordyn Herwitz"
+  },
+  {
+    "key": "11",
+    "division": "CEO",
+    "division-sup": "Dirección general",
+    "colaboradores": 1,
+    "nivel": 1,
+    "subdivisiones": 1,
+    "embajadores": "Jordyn Herwitz"
+  },
+  {
+    "key": "12",
+    "division": "CEO",
+    "division-sup": "Dirección general",
+    "colaboradores": 1,
+    "nivel": 1,
+    "subdivisiones": 1,
+    "embajadores": "Jordyn Herwitz"
+  }
+]
