@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router';
 import {
   Layout,
   Menu,
@@ -21,7 +22,7 @@ import '../styles/Header.less';
 const menu = (
   <Menu>
     <Menu.Item key="0">
-      <a href="/">Item</a>
+      <Button type="text">Item</Button>
     </Menu.Item>
   </Menu>
 );
@@ -42,23 +43,41 @@ const PortfolioSvg = () => (
 const PortfolioIcon = (props) => <Icon component={PortfolioSvg} {...props} />;
 
 function Header() {
+  const history = useHistory();
+
   return (
     <Layout.Header className="header">
       <Space className="header__container" split={<Divider type="vertical" />}>
         <img src={logo} alt="Logo Mandu" />
-        <Button type="text" style={{ color: 'white' }}>
+        <Button
+          type="text"
+          style={{ color: 'white' }}
+          onClick={() => history.push('/')}
+        >
           Dashboard
         </Button>
-        <Button type="text" style={{ color: 'white' }}>
+        <Button
+          type="text"
+          style={{ color: 'white' }}
+          onClick={() => history.push('organizacion')}
+        >
           Organización
         </Button>
         <Dropdown overlay={menu} trigger={['click']}>
-          <Button type="text" style={{ color: 'white' }}>
+          <Button
+            type="text"
+            style={{ color: 'white' }}
+            onClick={() => history.push('modelos')}
+          >
             Modelos <DownOutlined />
           </Button>
         </Dropdown>
         <Dropdown overlay={menu} trigger={['click']}>
-          <Button type="text" style={{ color: 'white' }}>
+          <Button
+            type="text"
+            style={{ color: 'white' }}
+            onClick={() => history.push('seguimiento')}
+          >
             Seguimiento <DownOutlined />
           </Button>
         </Dropdown>
@@ -81,7 +100,11 @@ function Header() {
           <div>
             <Avatar />
             <Dropdown overlay={menu} trigger={['click']}>
-              <Button type="text" style={{ color: 'white' }}>
+              <Button
+                type="text"
+                style={{ color: 'white' }}
+                onClick={() => history.push('perfil')}
+              >
                 Administrador <DownOutlined />
               </Button>
             </Dropdown>
