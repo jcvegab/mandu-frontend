@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import divisionesReducer from '../features/divisiones/divisionesSlice';
+import organizacionReducer from '../features/organizacion/organizacionSlice';
 
 export default configureStore({
   reducer: {
-    divisiones: divisionesReducer,
+    organizacion: organizacionReducer,
   },
 });

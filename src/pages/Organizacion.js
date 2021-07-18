@@ -14,7 +14,9 @@ import {
   UploadOutlined,
 } from '@ant-design/icons';
 import '../styles/Organizacion.less';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchIndexDivisiones } from '../features/organizacion/organizacionSlice';
 
 const columns = [
   {
@@ -76,10 +78,18 @@ const columns = [
 ];
 
 function Organizacion() {
-  let [state, setState] = useState({
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchIndexDivisiones());
+  }, []);
+
+  // const organizacionData = useSelector((state) => state.divisiones.items);
+
+  const [state, setState] = useState({
     data: [],
     selectedTab: '1',
   });
+
   return (
     <>
       <Typography.Title level={2}>Organización</Typography.Title>
@@ -93,9 +103,9 @@ function Organizacion() {
         activeKey={state.selectedTab}
         onChange={(activeKey) => setState({ ...state, selectedTab: activeKey })}
       >
-        <Tabs.TabPane tab="Divisiones" key="1">
+        <Tabs.TabPane className="tabs" tab="Divisiones" key="1">
           <section>
-            <Space className="divisiones__filtros">
+            <Space className="tabs-divisiones__filtros">
               <Radio.Group value={'listado'}>
                 <Radio.Button value="listado">Listado</Radio.Button>
                 <Radio.Button value="arbol">Árbol</Radio.Button>

@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { BASE_URI } from '../../app/config';
 
 export const fetchIndexDivisiones = createAsyncThunk(
-  'divisiones/fetchIndexDivisiones',
+  'organizacion/fetchIndexDivisiones',
   async () => {
     const response = await fetch(`${BASE_URI}/divisiones`, {
       method: 'GET',
@@ -12,12 +12,12 @@ export const fetchIndexDivisiones = createAsyncThunk(
       console.log(data);
       throw new Error('Algo anda mal...');
     }
-    return { divisiones: data };
+    return { organizacion: data };
   }
 );
 
-const divisionesSlice = createSlice({
-  name: 'divisiones',
+const organizacionSlice = createSlice({
+  name: 'organizacion',
   initialState: {
     items: [],
     status: 'iddle',
@@ -29,7 +29,7 @@ const divisionesSlice = createSlice({
     },
     [fetchIndexDivisiones.fulfilled]: (state, action) => {
       state.status = 'succeeded';
-      state.items = action.payload.divisiones;
+      state.items = action.payload.organizacion;
     },
     [fetchIndexDivisiones.rejected]: (state, action) => {
       state.status = 'failed';
@@ -38,4 +38,4 @@ const divisionesSlice = createSlice({
   },
 });
 
-export default divisionesSlice.reducer;
+export default organizacionSlice.reducer;
