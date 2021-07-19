@@ -21,7 +21,7 @@ import { fetchIndexDivisiones } from '../features/organizacion/organizacionSlice
 const columns = [
   {
     title: 'División',
-    dataIndex: 'division',
+    dataIndex: 'name',
     key: 'division',
     filters: [
       { text: 'CEO ', value: 'CEO' },
@@ -29,20 +29,20 @@ const columns = [
       { text: 'Growth', value: 'Growth' },
       { text: 'Strategy', value: 'Strategy' },
     ],
-    onFilter: (value, record) => record.division.indexOf(value) === 0,
-    sorter: (a, b) => a.division.length - b.division.length,
+    onFilter: (value, record) => record.name.indexOf(value) === 0,
+    sorter: (a, b) => a.name.length - b.name.length,
   },
   {
     title: 'División Superior',
-    dataIndex: 'division-sup',
+    dataIndex: ['parent', 'name'],
     key: 'division-sup',
     filters: [
       { text: 'Dirección general', value: 'Dirección general' },
       { text: 'Producto', value: 'Producto' },
       { text: 'Operaciones', value: 'Operaciones' },
     ],
-    onFilter: (value, record) => record['division-sup'].indexOf(value) === 0,
-    sorter: (a, b) => a['division-sup'].length - b['division-sup'].length,
+    onFilter: (value, record) => record.name.indexOf(value) === 0,
+    sorter: (a, b) => a.name.length - b.name.length,
   },
   {
     title: 'Colaboradores',
@@ -52,7 +52,7 @@ const columns = [
   },
   {
     title: 'Nivel',
-    dataIndex: 'nivel',
+    dataIndex: 'level',
     key: 'nivel',
     filters: [
       { text: '1', value: 1 },
@@ -61,8 +61,8 @@ const columns = [
       { text: '4', value: 4 },
       { text: '5', value: 5 },
     ],
-    onFilter: (value, record) => record.nivel === value,
-    sorter: (a, b) => a.nivel - b.nivel,
+    onFilter: (value, record) => record.level === value,
+    sorter: (a, b) => a.level - b.level,
   },
   {
     title: 'Subdivisiones',
@@ -83,7 +83,7 @@ function Organizacion() {
     dispatch(fetchIndexDivisiones());
   }, []);
 
-  // const organizacionData = useSelector((state) => state.divisiones.items);
+  const organizacionData = useSelector((state) => state.organizacion.items);
 
   const [state, setState] = useState({
     data: [],
@@ -128,7 +128,7 @@ function Organizacion() {
             <Table
               rowSelection={state.rowSelection}
               columns={columns}
-              dataSource={state.data}
+              dataSource={organizacionData}
               pagination={{ current: 1, pageSize: 12 }}
               bordered
             />
