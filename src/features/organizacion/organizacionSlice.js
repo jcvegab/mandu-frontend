@@ -4,7 +4,7 @@ import { BASE_URI } from '../../app/config';
 export const fetchIndexDivisiones = createAsyncThunk(
   'organizacion/fetchIndexDivisiones',
   async () => {
-    const response = await fetch(`${BASE_URI}/divisiones`, {
+    const response = await fetch(`${BASE_URI}/divisions`, {
       method: 'GET',
     });
     const data = await response.json();
